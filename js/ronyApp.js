@@ -13,6 +13,9 @@ app.config(['$routeProvider', function($routeProvider){
 	.when('/CPT02', {
 		templateUrl: 'view/computador.html'
 	})
+	.when('/WF03', {
+		templateUrl: 'view/wifi.html'
+	})
 
 }]);
 
@@ -29,6 +32,10 @@ app.controller('mainCtrl', function($http) {
 
 	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/CPT02').then(function(response){
 		vm.planoComputador = response.data.planos;
+	})
+
+	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/WF03').then(function(response){
+		vm.planoWifi = response.data.planos;
 	})
 
 });
