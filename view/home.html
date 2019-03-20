@@ -1,0 +1,22 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<h1>Escolha sua plataforma:</h1>
+	<p class="lead">Todas são ótimas, mas só você sabe qual é a melhor para você!</p>
+</div>
+
+<div class="container">
+	<div class="row mb-3 text-center">
+		<div class="col-sm-4" ng-repeat="plataforma in vm.plataformas">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">{{plataforma.nome}}</h4>
+				</div>
+				<div class="card-body">
+					<ul class="list-unstyled mt-3 mb-4">
+						<li>{{plataforma.descricao}}</li>
+					</ul>
+					<a href="#!/{{plataforma.sku}}" class="btn btn-lg btn-block btn-outline-primary">OK</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

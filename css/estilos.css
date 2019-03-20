@@ -5,3 +5,12 @@ body{
 	background-image: url('../imagens/background.jpg');
     background-size: cover;
 }
+a.btn.false {
+    pointer-events: none;
+    border-color: #ccc;
+    color: #ccc;
+}
+.btn-outline-primary.false {
+    color: #007bff;
+    background-color: transparent;
+}

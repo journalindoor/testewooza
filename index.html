@@ -9,34 +9,11 @@
 </head>
 <body ng-controller="mainCtrl as vm">
 
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1>Escolha sua plataforma:</h1>
-		<p class="lead">Todas são ótimas, mas só você sabe qual é a melhor para você!</p>
-	</div>
+	<div ng-view></div>
 
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm" ng-repeat="plataforma in vm.plataformas">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">{{plataforma.nome}}</h4>
-				</div>
-				<div class="card-body">
-					<ul class="list-unstyled mt-3 mb-4">
-						<li>{{plataforma.descricao}}</li>
-					</ul>
-					<a href="{{plataforma.sku}}" class="btn btn-lg btn-block btn-outline-primary">Quero essa</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+	<script src="https://code.angularjs.org/1.6.1/angular.min.js" charset="utf-8"></script>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js" charset="utf-8"></script>
+	<script src="https://code.angularjs.org/1.6.1/angular-route.min.js" charset="utf-8"></script>
 
 	
 
