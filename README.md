@@ -1,10 +1,12 @@
-
-
 # Rony - Teste Wooza
 
 -------------
 ### Início:
+
 Você vai precisar de um servidor para rodar o esse desafio então vamos começar por aqui:
+
+=======
+### Instalando:
 
 Instalando o npm `$ npm install npm@latest -g`
 
