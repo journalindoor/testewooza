@@ -1,12 +1,21 @@
-# testewooza
 
-Se você puder usar o node.js http-server vai ser bem fácil.
 
-Instalando
+# Rony - Teste Wooza
 
-npm install -g http-server
-Depois de instalar vá na pasta do seu projeto através do prompt de comando e rode:
+-------------
+### Início:
+Você vai precisar de um servidor para rodar o esse desafio então vamos começar por aqui:
 
-http-server -o 
+Instalando o npm `$ npm install npm@latest -g`
 
--o é para abrir o browser direto na página. 
+Instalando o server `$ npm install -g http-server`
+
+Rodando o servidor (na pasta do projeto) `$ http-server -o`
+
+-------------
+
+### Esse projeto foi feito com:
+* [AngularJS] - https://angularjs.org/
+* [CSS 3] - https://devdocs.io/css/
+* [HTML 5] - https://dev.w3.org/html5/html-author/
+* [BOOTSTRAP] - https://getbootstrap.com/
