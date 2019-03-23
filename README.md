@@ -22,3 +22,4 @@ Pronto! O projeto vai abrir.
 * [HTML 5] - https://dev.w3.org/html5/html-author/
 * [CSS 3] - https://devdocs.io/css/
 * [BOOTSTRAP] - https://getbootstrap.com/
+* [FONTAWESOME] - https://fontawesome.com/v4.7.0/

@@ -32,6 +32,9 @@ app.controller('planosCtrl', ['$scope', '$http', '$routeParams', function($scope
 
 	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/'+$routeParams.skuPlano).then(function(response){
 		$scope.todosPlanos = response.data.planos;
+		var tdPlanos = response.data.planos;
+		console.log("teste", tdPlanos);
 	})
+
 
 }]) 
