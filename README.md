@@ -2,9 +2,10 @@
 
 Se você puder usar o node.js http-server vai ser bem fácil.
 
-Instalando
+Instalando:
 
 npm install -g http-server
+
 Depois de instalar vá na pasta do seu projeto através do prompt de comando e rode:
 
 http-server -o 
