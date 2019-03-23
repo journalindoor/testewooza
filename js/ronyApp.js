@@ -5,37 +5,33 @@ app.config(['$routeProvider', function($routeProvider){
 
 	$routeProvider
 	.when('/', {
-		templateUrl: 'view/home.html'
-	})	
-	.when('/TBT01', {
-		templateUrl: 'view/tablet.html'
+		templateUrl: 'view/home.html',
+		controller: 'mainCtrl'
 	})
-	.when('/CPT02', {
-		templateUrl: 'view/computador.html'
-	})
-	.when('/WF03', {
-		templateUrl: 'view/wifi.html'
-	})
+	.when('/planos/:skuPlano/:nomePlano', {
+		templateUrl: 'view/planos.html',
+		controller: 'planosCtrl'
+	});
+	
 
 }]);
 
-app.controller('mainCtrl', function($http) {
-	var vm = this;
+
+app.controller('mainCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
 
 	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/plataformas').then(function(response){
-		vm.plataformas = response.data.plataformas;
+		$scope.plataformas = response.data.plataformas;
 	})
 
-	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/TBT01').then(function(response){
-		vm.planoTablet = response.data.planos;
+}]) 
+
+app.controller('planosCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+
+	$scope.skuPlano = $routeParams.skuPlano;
+	$scope.nomePlano = $routeParams.nomePlano;
+
+	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/'+$routeParams.skuPlano).then(function(response){
+		$scope.todosPlanos = response.data.planos;
 	})
 
-	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/CPT02').then(function(response){
-		vm.planoComputador = response.data.planos;
-	})
-
-	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/WF03').then(function(response){
-		vm.planoWifi = response.data.planos;
-	})
-
-});
+}]) 
