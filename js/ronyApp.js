@@ -8,11 +8,11 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'view/plataformas.html',
 		controller: 'mainCtrl'
 	})
-	.when('/planos/:skuPlataforma/:nomePlataforma', {
+	.when('/planos/:skuPlataforma/:nomePlataforma/:posPlataforma', {
 		templateUrl: 'view/planos.html',
 		controller: 'planosCtrl'
 	})
-	.when('/dados/:skuPlataforma/:skuPlano', {
+	.when('/dados/:skuPlataforma/:skuPlano/:posPlano', {
 		templateUrl: 'view/dados.html',
 		controller: 'dadosCtrl'
 	});
@@ -33,6 +33,7 @@ app.controller('planosCtrl', ['$scope', '$http', '$routeParams', function($scope
 
 	$scope.skuPlataforma = $routeParams.skuPlataforma;
 	$scope.nomePlataforma = $routeParams.nomePlataforma;
+	$scope.nProd = 0;
 
 	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/'+$routeParams.skuPlataforma).then(function(response){
 		$scope.todosPlanos = response.data.planos;
@@ -44,6 +45,13 @@ app.controller('dadosCtrl', ['$scope', '$http', '$routeParams', function($scope,
 
 	$scope.skuPlataforma = $routeParams.skuPlataforma;
 	$scope.skuPlano = $routeParams.skuPlano;
+	var posPlano = $routeParams.posPlano;
+	var planoEscolhido = [];
+
+	$http.get('http://private-59658d-celulardireto2017.apiary-mock.com/planos/'+$routeParams.skuPlataforma).then(function(response){
+		$scope.planoEscolhido = response.data.planos[posPlano];
+		planoEscolhido = $scope.planoEscolhido;
+	})
 
 
 	$scope.mostraDados = function (){
@@ -60,13 +68,33 @@ app.controller('dadosCtrl', ['$scope', '$http', '$routeParams', function($scope,
 			usutel
 			){
 			console.log('Nome: ', usunome);
-			console.log('E-mail: ', usuemail);
-			console.log('Nascimento: ', usunasc);
-			console.log('CPF: ', usucpf);
-			console.log('Tel.: ', usutel);
-		} 
-		else {
-			console.log('Tentou usar o formulário sem prencher os dados né?')
+		console.log('E-mail: ', usuemail);
+		console.log('Nascimento: ', usunasc);
+		console.log('CPF: ', usucpf);
+		console.log('Tel.: ', usutel);
+		console.log('----');
+		console.log('SKU: ', planoEscolhido.sku);
+		console.log('Franquia: ', planoEscolhido.franquia);
+		console.log('Valor: ', planoEscolhido.valor);
+		if(planoEscolhido.aparelho){
+			console.log('Aparelho: ', planoEscolhido.aparelho.nome);
+			console.log('Aparelho valor: ', planoEscolhido.aparelho.valor);
+			console.log('Aparelho numero parcelas: ', planoEscolhido.aparelho.numeroParcelas);
+			if(planoEscolhido.aparelho.valorParcelas){
+				console.log('Aparelho valor parcelas: ', planoEscolhido.aparelho.valorParcelas);
+			}
 		}
+		
+
+
+
+	} 
+	else {
+		console.log('Tentou usar o formulário sem prencher os dados né?')
 	}
+
+
+}
+
+
 }]);

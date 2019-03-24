@@ -19,7 +19,7 @@
 							<li>R${{plano.aparelho.valor}}</li>
 							<li>Em {{plano.aparelho.numeroParcelas}} parcela<span ng-if="plano.aparelho.numeroParcelas>1">s</span> <span ng-if="plano.aparelho.valorParcela">de R${{plano.aparelho.valorParcela}}</span></li>
 						</ul>
-						<a href="#!/dados/{{skuPlataforma}}/{{plano.sku}}" class="btn {{plano.ativo}} btn-lg btn-block btn-outline-primary" role="button"><i ng-if="plano.ativo" class="fa fa-check" aria-hidden="true"></i><i ng-if="!plano.ativo" class="fa fa-times" aria-hidden="true"></i></a>
+						<a href="#!/dados/{{skuPlataforma}}/{{plano.sku}}/{{$index}}" class="btn {{plano.ativo}} btn-lg btn-block btn-outline-primary" role="button"><i ng-if="plano.ativo" class="fa fa-check" aria-hidden="true"></i><i ng-if="!plano.ativo" class="fa fa-times" aria-hidden="true"></i></a>
 					</div>
 				</div>
 			</div>
