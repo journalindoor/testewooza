@@ -8,7 +8,7 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'view/plataformas.html',
 		controller: 'mainCtrl'
 	})
-	.when('/planos/:skuPlataforma/:nomePlataforma/:posPlataforma', {
+	.when('/planos/:skuPlataforma/:nomePlataforma/', {
 		templateUrl: 'view/planos.html',
 		controller: 'planosCtrl'
 	})
