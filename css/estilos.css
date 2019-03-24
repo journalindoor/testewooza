@@ -5,6 +5,9 @@ body{
 	background-image: url('../imagens/background.jpg');
     background-size: cover;
 }
+div.card-body ul li.description{
+	min-height: 48px;
+} 
 a.btn.false {
     pointer-events: none;
     border-color: #ccc;
